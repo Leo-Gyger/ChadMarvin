@@ -1,16 +1,11 @@
-name: Docker Image CI
-
-on: [push]
-
+name: Docker Compose Actions Workflow
+on: push
 jobs:
-
-  build:
-
+  test:
     runs-on: ubuntu-latest
     steps:
-    - name: Build the docker-compose stack
-      run: docker-compose up -f docker-compose.yml
-    - name: Check running containers
-      run: docker ps -a
-    - name: Check logs
-      run: docker logs
+      - uses: actions/checkout@v2
+      - name: Build the stack
+        run: docker-compose up -d
+        #      - name: Test
+        #        run: 
