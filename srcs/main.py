@@ -22,7 +22,7 @@ async def on_ready():
 
     members = '\n - '.join([member.name for member in guild.members])
     
-    print(f'Chad Members:\n - {members}')
+   # print(f'Chad Members:\n - {members}')
 
 @client.event
 async def on_member_join(member):
